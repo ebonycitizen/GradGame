@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.vivetest.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\Unity\\ViveTest\\actions.json",
+      "action_manifest_path": "D:\\Unity\\GradGame\\actions.json",
       "strings": {
         "en_us": {
           "name": "ViveTest [Testing]"
