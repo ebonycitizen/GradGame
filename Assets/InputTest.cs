@@ -13,7 +13,9 @@ public class InputTest : MonoBehaviour
 
     public SteamVR_Action_Vibration vibration;
 
-    public GameObject[] targetObjects;
+    public GameObject targetObjects;
+
+    private GameObject[] teleportPoints;
 
     private Teleport teleport;
 
@@ -24,7 +26,10 @@ public class InputTest : MonoBehaviour
 
         myAction.Activate();
 
-        foreach(GameObject obj in targetObjects)
+         targetObjects.SetActive(false);
+
+        teleportPoints = GameObject.FindGameObjectsWithTag("TeleportPoint");
+        foreach (GameObject obj in teleportPoints)
             obj.SetActive(false);
     }
 
@@ -54,12 +59,14 @@ public class InputTest : MonoBehaviour
     {
         if (Teleport.GetState(SteamVR_Input_Sources.LeftHand) || Teleport.GetState(SteamVR_Input_Sources.RightHand))
         {
-            foreach (GameObject obj in targetObjects)
+            targetObjects.SetActive(true);
+            foreach(GameObject obj in teleportPoints)
                 obj.SetActive(true);
         }
         else
         {
-            foreach (GameObject obj in targetObjects)
+            targetObjects.SetActive(false);
+            foreach (GameObject obj in teleportPoints)
                 obj.SetActive(false);
         }         
     }
