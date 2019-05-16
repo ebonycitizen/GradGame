@@ -28,7 +28,11 @@ public class RayFromCamera : MonoBehaviour
 
 
         if (isHit)
+        {
+
             hitObj = hit.transform.gameObject;
+            Debug.Log(hitObj.name);
+        }
     }
 
     public static GameObject ObjectLookAt()
