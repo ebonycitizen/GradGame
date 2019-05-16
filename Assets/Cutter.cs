@@ -16,7 +16,7 @@ public class Cutter : MonoBehaviour
 
     public float time = 0.2f;
     public int herz = 60;
-    public int power = 1;
+    public float power = 1;
 
 
 
