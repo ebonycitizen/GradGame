@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BeatSaber.cs" />
     <Compile Include="Assets\Cutter.cs" />
     <Compile Include="Assets\InputTest.cs" />
     <Compile Include="Assets\MeshCut.cs" />

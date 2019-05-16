@@ -444,10 +444,11 @@ public class MeshCut : MonoBehaviour
         obj.transform.position = transform.position;
         obj.transform.rotation = transform.rotation;
         obj.transform.localScale = transform.localScale;
-        obj.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity+vec+cutPlane.normal*3;
+        obj.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity+vec / 2 + cutPlane.normal*2;
         obj.GetComponent<Rigidbody>().angularVelocity = GetComponent<Rigidbody>().angularVelocity;
         obj.GetComponent<MeshCut>().skinWidth = skinWidth;
-        Destroy(obj, 2);
+        //obj.GetComponent<Collider>().enabled = false;
+        Destroy(obj, 1f);
 
         GameObject obj2 = new GameObject("cut obj", typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider), typeof(Rigidbody), typeof(MeshCut));
         var mesh2 = new Mesh();
@@ -465,10 +466,11 @@ public class MeshCut : MonoBehaviour
         obj2.transform.position = transform.position;
         obj2.transform.rotation = transform.rotation;
         obj2.transform.localScale = transform.localScale;
-        obj2.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity+ vec-cutPlane.normal*3;
+        obj2.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity+ vec / 2 - cutPlane.normal*2;
         obj2.GetComponent<Rigidbody>().angularVelocity = GetComponent<Rigidbody>().angularVelocity;
         obj2.GetComponent<MeshCut>().skinWidth = skinWidth;
-        Destroy(obj2, 2);
+        //obj2.GetComponent<Collider>().enabled = false;
+        Destroy(obj2, 1f);
 
         //このオブジェクトをデストロイ
         Destroy(gameObject);
