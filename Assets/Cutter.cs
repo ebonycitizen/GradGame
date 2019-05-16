@@ -33,6 +33,11 @@ public class Cutter : MonoBehaviour
         var meshCut = other.gameObject.GetComponent<MeshCut>();
         if (meshCut == null) { return; }
 
+        if (pose.GetVelocity(HandType).magnitude <= 1)
+        {
+            other.GetComponent<Rigidbody>().velocity = pose.GetVelocity(HandType) * 10;
+            return;
+        }
         var cutPlane = new Plane(Vector3.Cross(transform.forward.normalized, prePos - transform.position).normalized, transform.position);
         meshCut.Cut(cutPlane, pose.GetVelocity(SteamVR_Input_Sources.RightHand));
 
