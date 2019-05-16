@@ -43,7 +43,7 @@ public class Teleport : MonoBehaviour
         Vector3 to = obj.transform.position;
         Transform parent = obj.transform.parent;
 
-        Destroy(obj);
+        //Destroy(obj);
 
         yield return new WaitForSeconds(0.1f);
 
@@ -56,7 +56,7 @@ public class Teleport : MonoBehaviour
 
         yield return new WaitForSeconds(0.7f);
         canTeleport = true;
-        Spawn(parent);
+        //Spawn(parent);
     }
 
     private void Spawn(Transform parent)

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 313639771502261181}
   m_Layer: 9
   m_Name: TeleportPoint
-  m_TagString: Untagged
+  m_TagString: TeleportPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +93,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalColor: {r: 0.121568635, g: 0.5686275, b: 0.6901961, a: 1}
   hitColor: {r: 1, g: 0.59367865, b: 0.24056602, a: 1}
+  parent: {fileID: 0}
+  target: {fileID: 0}
+  distance: 1.5
 --- !u!65 &313639771502261181
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -101,7 +104,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313639771502261182}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.1966393, y: 1.7474532, z: 1.3018043}
