@@ -61,15 +61,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BeatSaber.cs" />
+    <Compile Include="Assets\CableComponent\Scripts\CableComponent.cs" />
+    <Compile Include="Assets\CableComponent\Scripts\CableParticle.cs" />
     <Compile Include="Assets\Cutter.cs" />
     <Compile Include="Assets\InputTest.cs" />
     <Compile Include="Assets\LaserPointer.cs" />
     <Compile Include="Assets\MeshCut.cs" />
     <Compile Include="Assets\PositionRecenter.cs" />
     <Compile Include="Assets\RayFromCamera.cs" />
+    <Compile Include="Assets\Rope.cs" />
+    <Compile Include="Assets\ShowTeleportPoint.cs" />
     <Compile Include="Assets\Teleport.cs" />
     <Compile Include="Assets\TeleportPoint.cs" />
     <Compile Include="Assets\WireAction.cs" />
+    <Compile Include="Assets\WireEnemy.cs" />
+    <Compile Include="Assets\WireInput.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Unity/GradGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

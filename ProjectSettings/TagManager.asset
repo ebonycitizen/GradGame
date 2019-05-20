@@ -7,6 +7,8 @@ TagManager:
   - Weapon
   - TeleportPoint
   - projectile
+  - FxTemporaire
+  - Rope
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - PostProcessing
   - TeleportPoint
   - Enemy
-  - 
+  - Rope
   - 
   - 
   - 

@@ -22,6 +22,9 @@ public class TeleportPoint : MonoBehaviour
 
     private void OnEnable()
     {
+        if (parent == null || target == null)
+            return;
+
         material.SetColor("_TintColor", normalColor);
         Vector2 vec = new Vector2(target.position.x - parent.position.x, target.position.z - parent.position.z);
         vec.Normalize();

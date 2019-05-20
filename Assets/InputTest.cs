@@ -29,15 +29,14 @@ public class InputTest : MonoBehaviour
 
          targetObjects.SetActive(false);
 
-        teleportPoints = GameObject.FindGameObjectsWithTag("TeleportPoint");
-        foreach (GameObject obj in teleportPoints)
-            obj.SetActive(false);
+        //teleportPoints = GameObject.FindGameObjectsWithTag("TeleportPoint");
+        //foreach (GameObject obj in teleportPoints)
+        //    obj.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(Pose.GetVelocity(HandType).y);
         if (RayFromCamera.ObjectLookAt() != null && teleport.CanTeleport)
         {
             //Debug.Log(Pose.GetLocalPosition(HandType).y + "  " + Pose.GetVelocity(HandType).y);
@@ -61,22 +60,22 @@ public class InputTest : MonoBehaviour
             }
         }
 
-        ShowTargetObject();
+        //ShowTargetObject();
     }
 
-    private void ShowTargetObject()
-    {
-        if (Teleport.GetState(SteamVR_Input_Sources.LeftHand) || Teleport.GetState(SteamVR_Input_Sources.RightHand))
-        {
-            targetObjects.SetActive(true);
-            foreach(GameObject obj in teleportPoints)
-                obj.SetActive(true);
-        }
-        else
-        {
-            targetObjects.SetActive(false);
-            foreach (GameObject obj in teleportPoints)
-                obj.SetActive(false);
-        }         
-    }
+    //private void ShowTargetObject()
+    //{
+    //    if (Teleport.GetState(SteamVR_Input_Sources.LeftHand) || Teleport.GetState(SteamVR_Input_Sources.RightHand))
+    //    {
+    //        targetObjects.SetActive(true);
+    //        foreach(GameObject obj in teleportPoints)
+    //            obj.SetActive(true);
+    //    }
+    //    else
+    //    {
+    //        targetObjects.SetActive(false);
+    //        foreach (GameObject obj in teleportPoints)
+    //            obj.SetActive(false);
+    //    }         
+    //}
 }
