@@ -30,7 +30,7 @@ public class WireEnemy : MonoBehaviour
 
     private void GetClose()
     {
-        //StartCoroutine("MoveClose");
+        StartCoroutine("MoveClose");
     }
 
     IEnumerator MoveClose()
@@ -48,7 +48,7 @@ public class WireEnemy : MonoBehaviour
             yield return null;
         }
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Rope"))
-            Destroy(obj, 0.5f);
+            Destroy(obj, 0.2f);
     }
 
 

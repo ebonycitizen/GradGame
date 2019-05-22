@@ -64,6 +64,7 @@
     <Compile Include="Assets\CableComponent\Scripts\CableComponent.cs" />
     <Compile Include="Assets\CableComponent\Scripts\CableParticle.cs" />
     <Compile Include="Assets\Cutter.cs" />
+    <Compile Include="Assets\FixedPosition.cs" />
     <Compile Include="Assets\InputTest.cs" />
     <Compile Include="Assets\LaserPointer.cs" />
     <Compile Include="Assets\MeshCut.cs" />

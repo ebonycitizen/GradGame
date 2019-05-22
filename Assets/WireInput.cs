@@ -27,10 +27,10 @@ public class WireInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(RayFromCamera.ObjectLookAt() != null && Trigger.GetStateDown(HandType))
+        if(GameObject.FindGameObjectWithTag("Rope") == null && RayFromCamera.ObjectLookAt() != null && Trigger.GetStateDown(HandType))
         {
-            GameObject wire = Instantiate(wirePrefab, camera.transform.position, Quaternion.identity, RayFromCamera.ObjectLookAt().transform);
-            WireAction wireAction = wire.GetComponent<WireAction>();
+            GameObject wire = Instantiate(wirePrefab, camera.transform.position, Quaternion.identity);
+            WireAction wireAction = wire.GetComponentInChildren<WireAction>();
             wireAction.Initialize(RayFromCamera.ObjectLookAt(), camera.transform.position);
         }
     }

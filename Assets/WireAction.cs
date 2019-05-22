@@ -12,14 +12,22 @@ public class WireAction : MonoBehaviour
     private float period;
 
     [SerializeField]
-    private float distanceInterval;
+    private float speed;
 
     [SerializeField]
-    private GameObject wirePrefab;
+    private float distanceOffset;
+
+    //[SerializeField]
+    //private float distanceInterval;
+
+    //[SerializeField]
+    //private GameObject wirePrefab;
 
     private Vector3 wireDirection;
 
     private CableComponent cableComponent;
+
+    private Vector3 position;
 
 
     // Start is called before the first frame update
@@ -27,6 +35,7 @@ public class WireAction : MonoBehaviour
     {
         wireDirection = target.transform.position - cameraPosition;
         cableComponent = GetComponent<CableComponent>();
+        position = transform.position;
     }
 
     public void Initialize(GameObject target, Vector3 position)
@@ -38,6 +47,8 @@ public class WireAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetCableLength();
+
         if (period < 0f)
             return;
 
@@ -47,17 +58,58 @@ public class WireAction : MonoBehaviour
     private void Shot()
     {
         Vector3 acceleration = Vector3.zero;
-        Vector3 diff = target.position - cameraPosition;
+        Vector3 diff = target.position - position;
 
         acceleration += (diff - velocity * period) * 2f / (period * period);
 
         period -= Time.deltaTime;
 
         velocity += acceleration * Time.deltaTime;
-        cameraPosition += velocity * Time.deltaTime;
+        position += velocity * Time.deltaTime;
 
-        transform.position = cameraPosition;
+        transform.position = position;
     }
+
+    private void SetCableLength()
+    {
+        float length = Vector3.Distance(cameraPosition, transform.position);
+
+        cableComponent.CableLength = length - 0.2f;
+    }
+
+    private void GetClose()
+    {
+        StartCoroutine("MoveClose");
+    }
+
+    IEnumerator MoveClose()
+    {
+        float distance = Vector3.Distance(transform.position, cameraPosition);
+
+        while (Vector3.Distance(transform.position, cameraPosition) > distanceOffset)
+        {
+            //float currentPos = (Time.time * speed) / distance;
+
+            transform.position = Vector3.Lerp(transform.position, cameraPosition, Time.deltaTime * speed);
+            //transform.position = Vector3.MoveTowards(transform.position, camera.position, speed * Time.deltaTime);
+
+            yield return null;
+        }
+        target.transform.parent = null;
+        Destroy(transform.parent.gameObject, 0.2f);
+    }
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == target.gameObject)
+        {
+            target.transform.parent = transform;
+            GetClose();
+        }
+    }
+
 
     //private int ComplementWire()
     //{
