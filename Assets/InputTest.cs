@@ -49,15 +49,18 @@ public class InputTest : MonoBehaviour
 
             //if((Pose.GetVelocity(HandType).y > 1 && Pose.GetLocalPosition(HandType).y > 0.1f) || Trigger.GetStateDown(SteamVR_Input_Sources.Any))
 
+
+
             if (Pose.GetLocalPosition(HandType).y <= teleport.heightRequired &&
                 (Pose.GetLastLocalPosition(HandType).y - Pose.GetLocalPosition(HandType).y) > 0 &&
-
                 (Pose.GetLastVelocity(HandType).y - Pose.GetVelocity(HandType).y) > 0 &&
                 Pose.GetVelocity(HandType).y <= teleport.speedRequired)
             {
                 teleport.Begin(obj);
                 teleport.CanTeleport = false;
             }
+
+
         }
 
         //ShowTargetObject();
