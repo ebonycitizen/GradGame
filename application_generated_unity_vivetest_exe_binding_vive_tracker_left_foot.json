@@ -85,16 +85,20 @@
          ],
          "poses" : [
             {
-               "output" : "/actions/default/in/pose",
+               "output" : "/actions/default/in/leftfoot",
                "path" : "/user/hand/left/pose/raw"
             },
             {
-               "output" : "/actions/default/in/pose",
+               "output" : "/actions/default/in/leftfoot",
                "path" : "/user/hand/right/pose/raw"
             },
             {
                "output" : "/actions/default/in/rightfoot",
                "path" : "/user/foot/right/pose/raw"
+            },
+            {
+               "output" : "/actions/default/in/leftfoot",
+               "path" : "/user/foot/left/pose/raw"
             }
          ],
          "skeleton" : [
@@ -216,6 +220,11 @@
                },
                "mode" : "trigger",
                "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/power"
             }
          ]
       },
@@ -264,9 +273,9 @@
          ]
       }
    },
-   "controller_type" : "vive_tracker_right_foot",
+   "controller_type" : "vive_tracker_left_foot",
    "description" : "",
-   "name" : "rightFoot",
+   "name" : "leftFoot",
    "options" : {},
    "simulated_actions" : []
 }

@@ -45,6 +45,10 @@
       "type": "pose"
     },
     {
+      "name": "/actions/default/in/LeftFoot",
+      "type": "pose"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
